@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logowanie</title>
+</head>
+<body>
+    <h1>Logowanie</h1>
+    <form id="loginForm">
+        <label for="keyFile">Prześlij swój plik klucza:</label>
+        <input type="file" id="keyFile" accept=".klucz">
+        <button type="submit">Zaloguj się</button>
+    </form>
+
+    <div id="loginStatus"></div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const file = document.getElementById('keyFile').files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const fileContent = e.target.result;
+                    const keyId = fileContent.match(/ID: (\w+)/)[1]; // Wydobycie ID z pliku
+
+                    // Prosta symulacja sprawdzania klucza (w praktyce można to zrobić np. z użyciem API)
+                    const knownKeys = ['abc123', 'xyz789', 'qwe456']; // Przykładowe znane klucze
+                    
+                    if (knownKeys.includes(keyId)) {
+                        document.getElementById('loginStatus').innerText = 'Zalogowano pomyślnie!';
+                    } else {
+                        document.getElementById('loginStatus').innerText = 'Nieznany klucz. Logowanie nieudane.';
+                    }
+                };
+                reader.readAsText(file);
+            } else {
+                document.getElementById('loginStatus').innerText = 'Wybierz plik przed zalogowaniem.';
+            }
+        });
+    </script>
+</body>
+</html>
