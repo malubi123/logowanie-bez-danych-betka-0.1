@@ -4,7 +4,8 @@ to projekt który ma na celu stworzenie logowania ale bez bazy danych użytkowni
 <details>
 <summary>dowiedz się więcej</summary>
 <p> 
-# Informacje o działaniu klucza.
+  
+## Informacje o działaniu klucza.
 
 klucz to spycialny plik zawierający kod z identyfikatorem przez który możesz się zalogować (zwykły użytkownik nie jest w stanie zobaczyć kodu w podglądzie w miejscu tórym przechowuje pliki ani nie może zobaczyć jego zawartośći po przez spycialne programy)  
 tylko masza strona może je zobaczyć
