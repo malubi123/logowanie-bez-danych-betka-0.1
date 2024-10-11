@@ -4,9 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logowanie</title>
+    <style>
+        /* Stylizacja przycisku */
+        .register-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #4CAF50;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .register-button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h1>Logowanie</h1>
+    <h1>Witamy na stronie logowania</h1>
+    <p>Aby się zarejestrować, kliknij poniższy przycisk:</p>
+
+    <!-- Przycisk przekierowujący do rejestracji -->
+    <a href="register.html" class="register-button">Zarejestruj się</a>
+
     <form id="loginForm">
         <label for="keyFile">Prześlij swój plik klucza:</label>
         <input type="file" id="keyFile" accept=".klucz">
